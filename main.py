@@ -55,7 +55,11 @@ async def webhook(req: Request):
       data = decode_event_name(body)
       # do something with this data
       print(data)
+    elif event_name == 'subscription_payment_success':
+      data = decode_event_name(body)
 
+      print(data)
+      
     else:
       print('Invalid Event Name')
 
