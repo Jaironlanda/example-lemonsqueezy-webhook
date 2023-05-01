@@ -11,7 +11,7 @@ Learn More: [Lemonsqueezy Webhook](https://docs.lemonsqueezy.com/api/webhooks)
 
 1. Rename `.env-temp` to `.env`
 2. `SIGNING_SECRET` The secret can be anything you want but is normally a random string between 6 and 40 characters in length.
-3. Minimum python version `3.10`
+3. Python version `3.10`
 
 
 ## Install
@@ -20,3 +20,11 @@ Learn More: [Lemonsqueezy Webhook](https://docs.lemonsqueezy.com/api/webhooks)
 ## Run
 
 `uvicorn main:app --reload`
+
+## Endpoint
+
+Method: `POST`
+
+```bash
+http://localhost:8000/webhook
+```

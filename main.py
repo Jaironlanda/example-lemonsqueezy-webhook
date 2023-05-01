@@ -20,7 +20,7 @@ def validateWebhook(req_body, x_signature):
   return True
 
 
-def endcode_event_name(event):
+def decode_event_name(event):
   """
   By default, the request header type is in bytes.
   This method converts the bytes to JSON objects.
@@ -41,18 +41,18 @@ async def webhook(req: Request):
     event_name = req.headers.get('x-event-name')
     
     if event_name == 'order_created':
-      data = endcode_event_name(body)
+      data = decode_event_name(body)
       # do something with this data
       print(data)
 
     elif event_name == 'subscription_created':
       # subscriptions
-      data = endcode_event_name(body)
+      data = decode_event_name(body)
       # do something with this data
       print(data)
     
     elif event_name == 'subscription_updated':
-      data = endcode_event_name(body)
+      data = decode_event_name(body)
       # do something with this data
       print(data)
 
