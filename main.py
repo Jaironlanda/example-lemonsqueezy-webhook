@@ -41,22 +41,22 @@ async def webhook(req: Request):
     event_name = req.headers.get('x-event-name')
     
     if event_name == 'order_created':
-      data = decode_event_name(body)
+      data = await decode_event_name(body)
       # do something with this data
       print(data)
 
     elif event_name == 'subscription_created':
       # subscriptions
-      data = decode_event_name(body)
+      data = await decode_event_name(body)
       # do something with this data
       print(data)
     
     elif event_name == 'subscription_updated':
-      data = decode_event_name(body)
+      data = await decode_event_name(body)
       # do something with this data
       print(data)
     elif event_name == 'subscription_payment_success':
-      data = decode_event_name(body)
+      data = await decode_event_name(body)
 
       print(data)
       
